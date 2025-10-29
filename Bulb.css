@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: black;
+}
+.wrapper{
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+.wrapper img{
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    margin-top: -50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+
+}
+.wrapper label {
+    position: absolute;
+    bottom: 0px;
+    left: 12%;
+    transform: translateX(-50%);
+}
+    .wrapper label span{
+font-size: 20px;
+display: block;
+border: 1px solid ;
+border-radius: 10px;    
+padding: 5px;
+cursor: pointer;
+transition: all 0.3s ease;
+color: white;
+}
+.wrapper label span:hover{
+    background-color: white;
+    color: black;
+}
+.wrapper label span:before{
+    content:"TURN OFF";
+}
+.wrapper img#bulb-on{
+    opacity: 0;
+    animation: glow 3s linear infinite;
+}
+@keyframes glow{
+    0%{
+        opacity: 1;
+    }
+    5%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    74%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 1;
+    }
+    84%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#bttn:checked ~ img#bulb-on{
+    animation: none;
+}
+#bttn:checked ~ label span::before{
+    content: "TURN ON";
+}
+.wrapper input{
+    display: none;
+}
+
